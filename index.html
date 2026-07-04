@@ -1,185 +1,294 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta name="google-site-verification" content="xKtLNhhyzuE0pMOLheBiDOB7s3BfFBb3gfysW7qaxek" />
- <meta charset="utf-8">
+<html lang="en">
+<head>
+  <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Ti Zhou, Stony Brook, SBU</title>
-<meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="Home" />
-<meta property="og:locale" content="en_US" />
-<link rel="canonical" href="http://0.0.0.0/" />
-<meta property="og:url" content="htt p://0.0.0.0/" />
-<meta property="og:site_name" content="Home" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Home" />
-<script type="application/ld+json">
-{"@type":"WebSite","headline":"Home","url":"http://0.0.0.0/","name":"Home","@context":"https://schema.org"}</script>
-<!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="./assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://0.0.0.0/feed.xml" title="Home" /><script src="./assets/javascript/bootstrap/jquery.min.js"></script>
-  <script src="./assets/javascript/bootstrap/bootstrap.bundle.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="google-site-verification" content="xKtLNhhyzuE0pMOLheBiDOB7s3BfFBb3gfysW7qaxek" />
+
+  <title>Ti Zhou &mdash; Stony Brook University</title>
+  <meta name="generator" content="Jekyll v3.9.0" />
+  <meta property="og:title" content="Ti Zhou" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Ti Zhou" />
+  <link rel="canonical" href="https://coladog.github.io/" />
+  <meta property="og:url" content="https://coladog.github.io/" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="twitter:title" content="Ti Zhou" />
+  <script type="application/ld+json">
+  {"@type":"WebSite","headline":"Ti Zhou","url":"https://coladog.github.io/","name":"Ti Zhou","@context":"https://schema.org"}</script>
+
+  <style>
+    :root {
+      --bg: #fbfaf7;
+      --fg: #1f1d1a;
+      --muted: #6f6a63;
+      --accent: #9c3b28;
+      --accent-hover: #7d2d1d;
+      --rule: #e6e1d8;
+      --maxw: 680px;
+    }
+    * { box-sizing: border-box; }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: Charter, Georgia, Cambria, "Times New Roman", serif;
+      font-size: 18px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .wrap {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 4rem 1.5rem 5rem;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color .15s ease, color .15s ease;
+    }
+    a:hover {
+      color: var(--accent-hover);
+      border-bottom-color: currentColor;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+    .header h1 {
+      font-size: 2.1rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin: 0 0 0.4rem;
+    }
+    .header .meta {
+      color: var(--muted);
+      font-size: 0.97rem;
+      line-height: 1.55;
+    }
+    .header .meta .name-affil { color: var(--fg); }
+    .portrait {
+      flex: 0 0 auto;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px solid var(--rule);
+      margin: 2.5rem 0;
+    }
+
+    .bio p { margin: 0 0 1rem; }
+    .bio p:last-child { margin-bottom: 0; }
+
+    /* Section headings */
+    h2 {
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin: 3rem 0 1.4rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    /* Publications */
+    .pub { margin: 0 0 1.6rem; }
+    .pub-title {
+      font-weight: 600;
+      line-height: 1.4;
+    }
+    .pub-authors { color: var(--fg); }
+    .pub-venue {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .pub-venue .rate { font-style: italic; }
+    .pub-venue .venue-name {
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.02em;
+    }
+    .pub-links {
+      font-size: 0.92rem;
+      margin-top: 0.15rem;
+    }
+    .pub-links a { margin-right: 0.9rem; white-space: nowrap; }
+    .pub-tags {
+      margin-top: 0.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .pub-tags span {
+      font-size: 0.78rem;
+      line-height: 1.4;
+      color: var(--accent);
+      border: 1px solid var(--rule);
+      border-radius: 999px;
+      padding: 0.1rem 0.65rem;
+      white-space: nowrap;
+    }
+
+    /* Mentoring */
+    .mentee { margin: 0 0 0.3rem; }
+    .mentee .years { color: var(--muted); }
+    .mentor-note { margin-top: 1rem; }
+
+    @media (max-width: 560px) {
+      body { font-size: 17px; }
+      .wrap { padding: 2.5rem 1.2rem 3.5rem; }
+      .header {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 1.2rem;
+      }
+      .portrait { width: 120px; height: 120px; }
+    }
+  </style>
 </head>
 <body>
-<div class="py-5">
-      <div class="container page-content">
-          <div max-width="300px"><section>
-    <div class="container" width="100%">
-  <div class="row">
-    <div class="col-sm">
-<h1>Ti Zhou</h1>
-Ph.D. student <br />
-Department of Computer Science <br />
-Stony Brook University (SBU) <br />
+  <main class="wrap">
 
-<br />
-<!-- Office: New Computer Science RM-351 <br /> -->
-Email: tizhou1 at cs dot stonybrook dot edu<br />
-<!-- Links: <a href="">Google Scholar</a> -->
+    <header class="header">
+      <div>
+        <h1>Ti Zhou</h1>
+        <div class="meta">
+          <span class="name-affil">Ph.D. student</span><br>
+          Department of Computer Science<br>
+          Stony Brook University (SBU)<br>
+          <br>
+          Email: tizhou1 at cs dot stonybrook dot edu
+        </div>
+      </div>
+      <img class="portrait" src="./assets/me.jpg" alt="Ti Zhou" />
+    </header>
+
+    <hr />
+
+    <section class="bio">
+      <p>
+        I'm a CS PhD student at Stony Brook University (since Fall 2023),
+        working on practical formal verification of high-performance distributed systems.
+        I'm advised by <a href="http://mpaxos.com/">Prof. Shuai Mu</a> and
+        <a href="https://www3.cs.stonybrook.edu/~omar/">Prof. Omar Chowdhury</a>,
+        and work closely with <a href="https://zhangzihao270.github.io/">Zihao Zhang</a>.
+      </p>
+      <p>
+        Before joining Stony Brook, I completed my M.Sc. (2023) and Honours B.Sc. (2021) in
+        Computer Science at StFX University in Canada, where I was advised by
+        <a href="https://people.stfx.ca/mlin/">Prof. Man Lin</a>.
+        I worked on CPU power management in the Linux kernel for embedded systems.
+      </p>
+      <p>
+        I enjoy many forms of art, and I see computer systems as one of them.
+        I do some <a href="./assets/p1.png">painting</a>.
+      </p>
+    </section>
+
+    <h2>Selected Publications</h2>
+
+    <div class="pub">
+      <div class="pub-title">Lion: Modular Verification of Async Runtime Liveness</div>
+      <div class="pub-authors"><strong>T. Zhou</strong>, Z. Zhang, O. Chowdhury and S. Mu.</div>
+      <div class="pub-venue"><span class="venue-name">SOSP</span> 2026, to appear. <span class="rate">(62/390, 15.9% acceptance rate)</span></div>
+      <div class="pub-tags">
+        <span>Async runtime</span>
+        <span>Novel abstraction for specifying and verifying liveness</span>
+      </div>
     </div>
-    <div class="col-sm">
-      <img src="./assets/me.jpg" height="200" class="float-right"/>
+
+    <div class="pub">
+      <div class="pub-title">AutoMan: Facilitating Verified Distributed Systems Development Through Automatic Code Generation and Manual Optimizations</div>
+      <div class="pub-authors">Z. Zhang*, <strong>T. Zhou*</strong> (* co-1st authors), C. Jenkins, O. Chowdhury and S. Mu.</div>
+      <div class="pub-venue"><span class="venue-name">SOSP</span> 2025. <span class="rate">(65/368, 17.7% acceptance rate)</span></div>
+      <div class="pub-tags">
+        <span>Spec-to-implementation recovery</span>
+        <span>Deterministic code generation</span>
+      </div>
+      <div class="pub-links"><a href="./assets/automan-sosp25.pdf">[PDF]</a><a href="https://github.com/stonysystems/automan">[Software: AutoMan transpiler]</a></div>
     </div>
-  </div>
-</div>
 
-<font size="2">  
+    <div class="pub">
+      <div class="pub-title">CPU Frequency Scheduling of Real-Time Applications on Embedded Devices with Temporal Encoding-based Deep Reinforcement Learning</div>
+      <div class="pub-authors"><strong>T. Zhou</strong> and M. Lin.</div>
+      <div class="pub-venue">Journal of Systems Architecture, 2023.</div>
+      <div class="pub-links">
+        <a href="./assets/papers/JSA2023.pdf">[PDF]</a>
+        <a href="https://github.com/coladog/tinyagent">[Software: Neural Network in Linux kernel]</a>
+        <a href="https://lore.kernel.org/lkml/20210311123708.23501-2-frederic@kernel.org/">[A Linux Contribution]</a>
+        <a href="./assets/papers/UIC2023.pdf">[Profiling CPU power management in Linux]</a>
+        <a href="https://arxiv.org/pdf/2409.19434">[A follow-up work scales the method to multiple tasks]</a>
+      </div>
+    </div>
 
-<hr />
-I'm a CS PhD student at Stony Brook University (since Fall 2023),  
-working on practical formal verification of high-performance distributed systems.  
-I'm advised by <a href="http://mpaxos.com/">Prof. Shuai Mu</a> and  
-<a href="https://www3.cs.stonybrook.edu/~omar/">Prof. Omar Chowdhury</a>,  
-and work closely with <a href="https://zhangzihao270.github.io/">Zihao Zhang</a>.
+    <h2>Students Mentored</h2>
 
-<br>
-Before joining Stony Brook, I completed my M.Sc. (2023) and Honours B.Sc. (2021) in Computer Science at StFX University in Canada,  
-where I was advised by <a href="https://people.stfx.ca/mlin/">Prof. Man Lin</a>.  
-I worked on CPU power management in the Linux kernel for embedded systems.
-<br>
-<br>
+    <p class="mentee">Yitong Zhao: <span class="years">2024 &ndash; 2025</span>, High School &rarr; Undergrad@UIUC.</p>
+    <p class="mentee">Xinyi Li: <span class="years">2022 &ndash; 2024</span>, Undergrad@StFX &rarr; M.Sc@Dalhousie.</p>
+    <p class="mentee">Haoyu Wang: <span class="years">2022 &ndash; 2024</span>, Undergrad@StFX &rarr; M.Sc@Dalhousie.</p>
 
-I enjoy many forms of art, and I see computer systems as one of them.
-I do some <a href="./assets/p1.png">painting</a>.
+    <p class="mentor-note">
+      I designed and led projects based on my M.Sc. thesis for Xinyi
+      <a href="https://arxiv.org/pdf/2409.19434">[PDF]</a>
+      and Haoyu
+      <a href="https://arxiv.org/pdf/2407.02764">[PDF]</a>,
+      each of which led to a publication in
+      <a href="https://www.computer.org/csdl/journal/su">IEEE Trans. on Sustainable Computing</a>.
+    </p>
 
-<br>
+  </main>
 
-<br>
-
-<h3> Selected Publication </h3>
-
-<li>
-  AutoMan: Facilitating Verified Distributed Systems Development Through Automatic Code Generation and Manual Optimizations    <br />
-  Z. Zhang*, <strong>T. Zhou*</strong> (* co-primary), C. Jenkins, O. Chowdhury and S. Mu.
-  <br />
-  SOSP 2025 (to appear), Seoul, South Korea, October 2025.
-</li>
-
-<br>
-
-<li>
-  CPU Frequency Scheduling of Real-Time Applications on Embedded Devices with Temporal Encoding-based Deep Reinforcement Learning
-  <br />
-  <strong>T. Zhou</strong> and M. Lin.
-  <br />
-  Journal of Systems Architecture, 2023. <a href="./assets/papers/JSA2023.pdf">[PDF]</a> 
-  <br>
-  <a href="https://github.com/coladog/tinyagent",>[Software: Neural Network in Linux kernel]</a>
-  <br>
-  <a href="https://lore.kernel.org/lkml/20210311123708.23501-2-frederic@kernel.org/">[A Linux Contribution]</a>
-  <br>
-  <a href="./assets/papers/UIC2023.pdf">[Profiling CPU power management in Linux]</a> 
-  <br>
-  <a href="https://arxiv.org/pdf/2409.19434">[A follow-up work scales the method to multiple tasks]</a> 
-</li>
-
-<br>
-
-<h3> Students Mentored </h3>
-
-Yitong Zhao: 2024 - Now, High School -> Undergrad@UIUC.
-<br>
-Xinyi Li: 2022 - 2024, Undergrad@StFX -> M.Sc@Dalhousie. 
-<br>
-Haoyu Wang: 2022 - 2024, Undergrad@StFX -> M.Sc@Dalhousie. 
-<br>
-I designed and led projects based on my M.Sc. thesis for Xinyi
-<a href="https://arxiv.org/pdf/2409.19434">[PDF]</a>
-and Haoyu
-<a href="https://arxiv.org/pdf/2407.02764">[PDF]</a>
-, each of which led to a publication in <a href="https://www.computer.org/csdl/journal/su">IEEE Trans. on Sustainable Computing</a>.
-<hr />
-<!-- 
-Before joining Stony Brook, I earned my M.Sc. (2023) and Honours B.Sc. (2021) degrees in Computer Science from StFX University, Canada. 
+<!--
+Before joining Stony Brook, I earned my M.Sc. (2023) and Honours B.Sc. (2021) degrees in Computer Science from StFX University, Canada.
 I was advised by <a href="https://people.stfx.ca/mlin/">Prof. Man Lin</a>.
 My research focused on CPU power management within the Linux kernel on embedded devices.
 
-<br>
-<br>
-
 My undergraduate and master's theses resulted in:
-<br>
 1. <a href="https://lore.kernel.org/lkml/20210311123708.23501-2-frederic@kernel.org/">[A Linux Contribution]</a>:
 Discover a integer overflow issue inside CPUIdle module that could corrupt the behavior of CPUIdle governor.
-<br>
 2. Supervised two undergraduate projects
 <a href="https://arxiv.org/pdf/2409.19434">[1]</a>
 <a href="https://arxiv.org/pdf/2407.02764">[2]</a>
 based on my <a href="./assets/papers/JSA2023.pdf">M.Sc thesis</a>, both leading to publications.
-<br>
 3. Several publications:
 
-<ul>
-  <li>
-    Energy-efficient computation with dvfs using deep reinforcement learning for multi-task systems in edge computing
-    <br />
-    X. Li, <strong>T. Zhou</strong>, H. Wang and M. Lin.
-    <br />
-    IEEE Trans. on Sustainable Computing, 2025. <a href="https://arxiv.org/pdf/2409.19434">[PDF]</a>
-  </li>
-
-  <li>
-    Data-driven software-based power estimation for embedded devices
-    <br />
-    H. Wang, X. Li, <strong>T. Zhou</strong> and M. Lin.
-    <br />
-    IEEE Trans. on Sustainable Computing, 2025. <a href="https://arxiv.org/pdf/2407.02764">[PDF]</a>
-  </li>
-
-  <li>
-    CPU Frequency Scheduling of Real-Time Applications on Embedded Devices with Temporal Encoding-based Deep Reinforcement Learning
-    <br />
-    <strong>T. Zhou</strong> and M. Lin.
-    <br />
-    Journal of Systems Architecture, 2023. <a href="./assets/papers/JSA2023.pdf">[PDF]</a> <a href="https://github.com/coladog/tinyagent",>[Software, NN in Linux kernel]</a>
-    </li>
-
-  <li>
-    Profiling and Understanding CPU Power Management in Linux
-    <br />
-    <strong>T. Zhou</strong>, H. Wang, X. Li and M. Lin.
-    <br />
-    Proc. IEEE UIC, 2023. <a href="./assets/papers/UIC2023.pdf">[PDF]</a>
-    </li>
-
-  <li>
-    Energy Efficient Computation Offloading with DVFS using Deep Reinforcement Learning for Time-Critical IoT Applications in Edge Computing
-    <br />
-    S. Panda, M. Lin and <strong>T. Zhou</strong>.
-    <br />
-    IEEE Internet of Things Journal, 2022. 
-    </li>
-
-  <li>
-    Deadline-Aware Deep-Recurrent-Q-Network Governor for Smart Energy Saving
-    <br />
-    <strong>T. Zhou</strong> and M. Lin.
-    <br />
-    IEEE Trans. on Network Science and Engineering, 2021. 
-  </li>
-</ul>
-
-<hr /> -->
+  - Energy-efficient computation with dvfs using deep reinforcement learning for multi-task systems in edge computing
+    X. Li, T. Zhou, H. Wang and M. Lin.
+    IEEE Trans. on Sustainable Computing, 2025. https://arxiv.org/pdf/2409.19434
+  - Data-driven software-based power estimation for embedded devices
+    H. Wang, X. Li, T. Zhou and M. Lin.
+    IEEE Trans. on Sustainable Computing, 2025. https://arxiv.org/pdf/2407.02764
+  - CPU Frequency Scheduling of Real-Time Applications on Embedded Devices with Temporal Encoding-based Deep Reinforcement Learning
+    T. Zhou and M. Lin.
+    Journal of Systems Architecture, 2023. ./assets/papers/JSA2023.pdf
+  - Profiling and Understanding CPU Power Management in Linux
+    T. Zhou, H. Wang, X. Li and M. Lin.
+    Proc. IEEE UIC, 2023. ./assets/papers/UIC2023.pdf
+  - Energy Efficient Computation Offloading with DVFS using Deep Reinforcement Learning for Time-Critical IoT Applications in Edge Computing
+    S. Panda, M. Lin and T. Zhou.
+    IEEE Internet of Things Journal, 2022.
+  - Deadline-Aware Deep-Recurrent-Q-Network Governor for Smart Energy Saving
+    T. Zhou and M. Lin.
+    IEEE Trans. on Network Science and Engineering, 2021.
+-->
 
 </body>
-
 </html>

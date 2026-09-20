@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light">
+  <meta name="color-scheme" content="light dark">
   <meta name="google-site-verification" content="xKtLNhhyzuE0pMOLheBiDOB7s3BfFBb3gfysW7qaxek" />
 
   <title>Ti Zhou &mdash; Stony Brook University</title>
@@ -154,13 +154,50 @@
       border: 1px solid var(--rule);
       border-radius: 999px;
       padding: 0.1rem 0.65rem;
-      white-space: nowrap;
     }
 
+    /* Experience */
+    .job { margin: 0 0 1.6rem; }
+    .job-role {
+      font-weight: 600;
+      line-height: 1.4;
+    }
+    .job-meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .job-meta .org {
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.02em;
+    }
+    .job-desc { margin-top: 0.15rem; }
+
     /* Mentoring */
-    .mentee { margin: 0 0 0.3rem; }
-    .mentee .years { color: var(--muted); }
+    .mentee { margin: 0 0 1rem; }
+    .mentee .name { font-weight: 600; }
+    .mentee .years {
+      display: block;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
     .mentor-note { margin-top: 1rem; }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #14130f;
+        --fg: #e9e5db;
+        --muted: #9c958a;
+        --accent: #dd8f76;
+        --accent-hover: #f0a88f;
+        --rule: #302c25;
+      }
+      /* ACM badges are dark ink on transparency: keep a light disc behind them */
+      .pub-badges img {
+        background: #f4f1ea;
+        border-radius: 50%;
+      }
+    }
 
     @media (max-width: 560px) {
       body { font-size: 17px; }
@@ -215,16 +252,27 @@
       </p>
     </section>
 
+    <h2>Industry Experience</h2>
+
+    <div class="job">
+      <div class="job-role">Applied Scientist Intern</div>
+      <div class="job-meta"><span class="org">Amazon AWS Security</span> &middot; 2026 &ndash; present</div>
+      <div class="job-desc">Formal-methods-driven evaluation of system code changes.</div>
+    </div>
+
     <h2>Selected Publications</h2>
 
     <div class="pub">
       <div class="pub-title">Lion: Modular Verification of Async Runtime Liveness</div>
       <div class="pub-authors"><strong>T. Zhou</strong>, Z. Zhang, O. Chowdhury and S. Mu.</div>
-      <div class="pub-venue"><span class="venue-name">SOSP</span> 2026, to appear. <span class="rate">(62/390, 15.9% acceptance rate)</span><span class="pub-badges"><img src="./assets/badges/acm_available_1.1.png" alt="ACM Artifacts Available badge" title="Artifacts Available"><img src="./assets/badges/acm_functional_1.1.png" alt="ACM Artifacts Evaluated — Functional badge" title="Artifacts Evaluated — Functional"><img src="./assets/badges/acm_reproduced_1.1.png" alt="ACM Results Reproduced badge" title="Results Reproduced"></span></div>
+      <div class="pub-venue"><span class="venue-name">SOSP</span> 2026. <span class="rate">(62/390, 15.9% acceptance rate)</span><span class="pub-badges"><img src="./assets/badges/acm_available_1.1.png" alt="ACM Artifacts Available badge" title="Artifacts Available"><img src="./assets/badges/acm_functional_1.1.png" alt="ACM Artifacts Evaluated — Functional badge" title="Artifacts Evaluated — Functional"><img src="./assets/badges/acm_reproduced_1.1.png" alt="ACM Results Reproduced badge" title="Results Reproduced"></span></div>
       <div class="pub-tags">
         <span>Async runtime</span>
-        <span>Novel abstraction for specifying and verifying liveness</span>
+        <span>Logical Log abstraction</span>
+        <span>Attaches to general system shapes</span>
+        <span>Specifies both safety and liveness</span>
       </div>
+      <div class="pub-links"><a href="./assets/lion-sosp26.pdf">[PDF]</a><a href="https://github.com/stonysystems/lion">[Artifact: Lion async runtime]</a></div>
     </div>
 
     <div class="pub">
@@ -233,18 +281,23 @@
       <div class="pub-venue"><span class="venue-name">SOSP</span> 2025. <span class="rate">(65/368, 17.7% acceptance rate)</span><span class="pub-badges"><img src="./assets/badges/acm_available_1.1.png" alt="ACM Artifacts Available badge" title="Artifacts Available"><img src="./assets/badges/acm_functional_1.1.png" alt="ACM Artifacts Evaluated — Functional badge" title="Artifacts Evaluated — Functional"><img src="./assets/badges/acm_reproduced_1.1.png" alt="ACM Results Reproduced badge" title="Results Reproduced"></span></div>
       <div class="pub-tags">
         <span>Spec-to-implementation recovery</span>
-        <span>Deterministic code generation</span>
+        <span>DSL/transpilation/code generation</span>
+        <span>Refinement-based verification</span>
       </div>
-      <div class="pub-links"><a href="./assets/automan-sosp25.pdf">[PDF]</a><a href="https://github.com/stonysystems/automan">[Software: AutoMan transpiler]</a></div>
+      <div class="pub-links"><a href="./assets/automan-sosp25.pdf">[PDF]</a><a href="https://github.com/stonysystems/automan">[Artifact: AutoMan transpiler]</a></div>
     </div>
 
     <div class="pub">
       <div class="pub-title">CPU Frequency Scheduling of Real-Time Applications on Embedded Devices with Temporal Encoding-based Deep Reinforcement Learning</div>
       <div class="pub-authors"><strong>T. Zhou</strong> and M. Lin.</div>
       <div class="pub-venue">Journal of Systems Architecture, 2023.</div>
+      <div class="pub-tags">
+        <span>Neuro-symbolic system</span>
+        <span>In-kernel agent</span>
+      </div>
       <div class="pub-links">
         <a href="./assets/papers/JSA2023.pdf">[PDF]</a>
-        <a href="https://github.com/coladog/tinyagent">[Software: Neural Network in Linux kernel]</a>
+        <a href="https://github.com/coladog/tinyagent">[Artifact: Neural Network in Linux kernel]</a>
         <a href="https://lore.kernel.org/lkml/20210311123708.23501-2-frederic@kernel.org/">[A Linux Contribution]</a>
         <a href="./assets/papers/UIC2023.pdf">[Profiling CPU power management in Linux]</a>
         <a href="https://arxiv.org/pdf/2409.19434">[A follow-up work scales the method to multiple tasks]</a>
@@ -253,9 +306,12 @@
 
     <h2>Students Mentored</h2>
 
-    <p class="mentee">Yitong Zhao: <span class="years">2024 &ndash; 2025</span>, High School &rarr; Undergrad@UIUC.</p>
-    <p class="mentee">Xinyi Li: <span class="years">2022 &ndash; 2024</span>, Undergrad@StFX &rarr; M.Sc@Dalhousie.</p>
-    <p class="mentee">Haoyu Wang: <span class="years">2022 &ndash; 2024</span>, Undergrad@StFX &rarr; M.Sc@Dalhousie.</p>
+    <p class="mentee"><span class="name">Yitong Zhao</span>
+      <span class="years">2024 &ndash; 2025 &middot; High School &rarr; Undergrad@UIUC</span></p>
+    <p class="mentee"><span class="name">Xinyi Li</span>
+      <span class="years">2022 &ndash; 2024 &middot; Undergrad@StFX &rarr; PhD@Dalhousie</span></p>
+    <p class="mentee"><span class="name">Haoyu Wang</span>
+      <span class="years">2022 &ndash; 2024 &middot; Undergrad@StFX &rarr; PhD@Dalhousie</span></p>
 
     <p class="mentor-note">
       I designed and led projects based on my M.Sc. thesis for Xinyi
